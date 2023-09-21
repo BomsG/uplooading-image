@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload image</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="user">
+        <h1>Welcome Dear</h1>
+        <p>Dearie@gmail.com</p>
+        <img
+          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHVzZXIlMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+          id="dpics"
+        />
+        <label for="input-file" class="label">Upload image</label>
+        <input
+          type="file"
+          accept="image/jpeg, image/png, image/jpg"
+          id="input-file"
+          class="input-field"
+        />
+        <div class="form">
+          <label for="username">User name</label>
+          <input type="text" id="username" />
+          <label for="password">Password</label>
+          <input type="password" id="password" />
+          <h2>Are you a sport lover?</h2>
+          <div class="formin">
+            <h4>YES</h4>
+            <input type="radio" name="sport" />
+          </div>
+          <div class="formin">
+            <h4>NO</h4>
+            <input type="radio" name="sport" />
+          </div>
+          <button id="Submit" onClick="{pass()}">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // alert("insert correct details");
+      let displayPics = document.getElementById("dpics");
+      let inputFile = document.getElementById("input-file");
+
+      inputFile.onchange = function () {
+        displayPics.src = URL.createObjectURL(inputFile.files[0]);
+      };
+
+      let password = document.getElementById("password");
+      let username = document.getElementById("username");
+      function pass() {
+        if (username.value == "bomzzypearl" && password.value == "pearl00") {
+          return alert("Information Uploaded");
+          console.log("correct");
+        } else {
+          return alert("Wrong Information");
+          console.log("not correct");
+        }
+        // console.log(username.value + password.value);
+      }
+      localStorage.setItem("");
+    </script>
+  </body>
+</html>
